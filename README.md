@@ -83,4 +83,4 @@ Open your auth.gsp (/grails-app/views/login/auth.gsp) and add the next line wher
 Extras
 ========================
 
-Specially thanks to [Vinco Orbis](http://www.vincoorbis.com)
+Thanks to [Vinco Orbis](http://www.vincoorbis.com)
