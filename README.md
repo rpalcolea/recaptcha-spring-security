@@ -8,8 +8,8 @@ Requirements
 ========================
 
 1. Grails 1.3.7+
-2. Spring Security Core Plugin (1.2.7.3+)
-3. ReCaptcha Plugin (0.5.3+)
+2. [Spring Security Core Plugin](http://grails.org/plugin/spring-security-core) (1.2.7.3+)
+3. [ReCaptcha Plugin](http://grails.org/plugin/recaptcha) (0.5.3+)
 
 Installation
 ========================
