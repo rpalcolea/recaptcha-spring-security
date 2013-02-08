@@ -78,3 +78,9 @@ Adding the recaptcha to your auth view
 Open your auth.gsp (/grails-app/views/login/auth.gsp) and add the next line wherever you want to render the recaptcha after the attempts.
 
           <g:recaptchaLogin/>
+
+
+Extras
+========================
+
+Specially thanks to [Vinco Orbis](http://www.vincoorbis.com)
