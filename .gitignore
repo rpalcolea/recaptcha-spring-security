@@ -17,7 +17,6 @@ stacktrace.log
 out
 target
 target-eclipse
-plugins
 test/reports
 web-app/plugins
 web-app/WEB-INF/classes
