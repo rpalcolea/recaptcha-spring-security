@@ -70,3 +70,10 @@ In your Grails BuildConfig.groovy file, add the next line in dependencies sectio
         compile "com.google.guava:guava:14.0-rc1"
         [..]
     }
+    
+Adding the recaptcha to your auth view
+======================== 
+
+Open your auth.gsp (/grails-app/views/login/auth.gsp) and add the next line wherever you want to render the recaptcha after the attempts.
+
+          <g:recaptchaLogin/>
