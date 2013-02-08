@@ -16,7 +16,7 @@ Installation
 Configuration
 ========================
 
-# Config.groovy
+## Config.groovy
 
 Add the following lines to your Grails Config.groovy file:
 
