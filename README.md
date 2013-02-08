@@ -1,8 +1,9 @@
 recaptcha-spring-security
 =========================
 
-Grails: Using recaptcha with spring security core 
+Grails: Using recaptcha with spring security core for brute force defender
 
+based in: [Brute Force Defender](https://github.com/grygoriy/bruteforcedefender)
 
 Requirements
 ========================
