@@ -24,6 +24,7 @@ grails.project.dependency.resolution = {
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
+        compile "com.google.guava:guava:14.0-rc1"
 
         // runtime 'mysql:mysql-connector-java:5.1.5'
     }
@@ -33,5 +34,8 @@ grails.project.dependency.resolution = {
               ":release:1.0.0") {
             export = false
         }
+
+        compile ":recaptcha:0.5.3"
+        compile ":spring-security-core:1.2.7.3"
     }
 }

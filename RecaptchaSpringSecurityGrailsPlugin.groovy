@@ -2,20 +2,22 @@ class RecaptchaSpringSecurityGrailsPlugin {
     // the plugin version
     def version = "0.1"
     // the version or versions of Grails the plugin is designed for
-    def grailsVersion = "2.0 > *"
-    // the other plugins this plugin depends on
+    def grailsVersion = "1.3.7 > *"
+    //the other plugins this plugin depends on
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
     def pluginExcludes = [
-        "grails-app/views/error.gsp"
+            "grails-app/views/error.gsp",
+            'lib/*',
+            "grails-app/conf/RecaptchaConfig.groovy"
     ]
 
     // TODO Fill in these fields
     def title = "Recaptcha Spring Security Plugin" // Headline display name of the plugin
-    def author = "Your name"
-    def authorEmail = ""
+    def author = "Roberto Pérez Alcolea"
+    def authorEmail = "roberto@perezalcolea.info"
     def description = '''\
-Brief summary/description of the plugin.
+Prevents brute force attack with Spring security and Recaptcha.
 '''
 
     // URL to the plugin's documentation
