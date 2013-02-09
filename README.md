@@ -34,7 +34,9 @@ Add the following lines to your Grails Config.groovy file:
 	}
 
 time = minutes mantaining failed attempts
-allowedNumberOfAttempts = number of failed attempts before showing the recaptcha widget.
+allowed
+
+NumberOfAttempts = number of failed attempts before showing the recaptcha widget.
 
 Adding the recaptcha to your auth view
 ======================== 
@@ -47,4 +49,4 @@ Open your auth.gsp (/grails-app/views/login/auth.gsp) and add the next line wher
 Extras
 ========================
 
-Thanks to [Vinco Orbis](http://www.vincoorbis.com)
+Thanks to [Vinco Orbis](http://www.vincoorbis.com) and [Burt Beckwith](https://github.com/burtbeckwith)
