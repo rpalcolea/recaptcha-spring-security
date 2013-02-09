@@ -2,8 +2,6 @@ package org.codehaus.groovy.grails.plugins.recaptchaspringsecurity
 
 import org.springframework.context.ApplicationListener
 import org.springframework.security.authentication.event.AbstractAuthenticationFailureEvent
-import org.springframework.security.authentication.event.AuthenticationFailureBadCredentialsEvent
-
 
 class AuthenticationFailureListener implements ApplicationListener<AbstractAuthenticationFailureEvent> {
 
