@@ -1,21 +1,19 @@
 package org.codehaus.groovy.grails.plugins.recaptchaspringsecurity
 
-import org.springframework.web.context.request.RequestContextHolder
-import com.google.common.*
-
-/**
- * @author Grygoriy Mykhalyunyo
- * @modified by Roberto Perez
- */
-import javax.annotation.PostConstruct
 import java.util.concurrent.TimeUnit
 
-import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+import javax.annotation.PostConstruct
+
+import org.springframework.web.context.request.RequestContextHolder
 
 import com.google.common.cache.CacheBuilder
 import com.google.common.cache.CacheLoader
 import com.google.common.cache.LoadingCache
 
+/**
+ * @author Grygoriy Mykhalyunyo
+ * @modified by Roberto Perez
+ */
 class LoginAttemptCacheService {
 
     def grailsApplication
@@ -32,13 +30,12 @@ class LoginAttemptCacheService {
         attempts = CacheBuilder.newBuilder()
                 .expireAfterWrite(time, TimeUnit.MINUTES)
                 .build({0} as CacheLoader)
-
     }
 
     /**
      * Triggers on each unsuccessful login attempt and increases number of attempts
      */
-    def failLogin(String login) {
+    void failLogin(String login) {
         int numberOfAttempts = attempts.get(login)
         numberOfAttempts++
 
@@ -53,21 +50,16 @@ class LoginAttemptCacheService {
     /**
      * Triggers on each successful login attempt and resets number of attempts
      */
-    def loginSuccess(String login) {
+    void loginSuccess(String login) {
         attempts.invalidate(login)
         deactivateRecaptcha()
     }
 
-
     private activateRecaptcha() {
-        def session = RequestContextHolder.currentRequestAttributes().getSession()
-        session["recaptchaForLogin"] = true
+        RequestContextHolder.currentRequestAttributes().session.recaptchaForLogin = true
     }
 
     private deactivateRecaptcha() {
-        def session = RequestContextHolder.currentRequestAttributes().getSession()
-        session["recaptchaForLogin"] = false
-
+        RequestContextHolder.currentRequestAttributes().session.recaptchaForLogin = false
     }
-
 }
