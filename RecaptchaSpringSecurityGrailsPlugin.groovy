@@ -1,8 +1,15 @@
+import org.codehaus.groovy.grails.plugins.recaptchaspringsecurity.AuthenticationFailureListener
+import org.codehaus.groovy.grails.plugins.recaptchaspringsecurity.AuthenticationSuccessListener
+import org.codehaus.groovy.grails.plugins.recaptchaspringsecurity.CaptchaCaptureFilter
+import org.codehaus.groovy.grails.plugins.springsecurity.SecurityFilterPosition
+import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+
 class RecaptchaSpringSecurityGrailsPlugin {
 
     def version = "0.1"
     def grailsVersion = "1.3.7 > *"
     def pluginExcludes = ["grails-app/conf/RecaptchaConfig.groovy"]
+    def loadAfter = ['springSecurityCore']
 
     def title = "Recaptcha Spring Security Plugin"
     def author = "Roberto Pérez Alcolea"
@@ -18,6 +25,20 @@ class RecaptchaSpringSecurityGrailsPlugin {
     def scm = [url: "https://github.com/rpalcolea/recaptcha-spring-security"]
 
     def doWithSpring = {
-        // TODO Implement runtime spring config (optional)
+
+        authenticationFailureListener(AuthenticationFailureListener) {
+            loginAttemptCacheService = ref('loginAttemptCacheService')
+        }
+
+        authenticationSuccessEventListener(AuthenticationSuccessListener) {
+            loginAttemptCacheService = ref('loginAttemptCacheService')
+        }
+
+        captchaCaptureFilter(CaptchaCaptureFilter) {
+            failureUrl = SpringSecurityUtils.securityConfig.failureHandler.defaultFailureUrl
+            recaptchaService = ref('recaptchaService')
+        }
+
+        SpringSecurityUtils.registerFilter 'captchaCaptureFilter', SecurityFilterPosition.SECURITY_CONTEXT_FILTER.order + 10
     }
 }
