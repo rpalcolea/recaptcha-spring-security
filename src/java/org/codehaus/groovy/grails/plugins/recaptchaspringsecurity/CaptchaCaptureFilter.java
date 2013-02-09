@@ -51,7 +51,7 @@ public class CaptchaCaptureFilter extends OncePerRequestFilter {
                     params.put("recaptcha_response_field", recaptcha_response);
                     params.put("recaptcha_challenge_field", recaptcha_challenge);
                     // Check if valid
-                    boolean verified = (boolean) recaptchaService.verifyAnswer(session, remoteAddr, params);
+                    boolean verified =  (Boolean) recaptchaService.verifyAnswer(session, remoteAddr, params);
                     if (!verified) {
                         // Redirect user to login page
                         failureHandler.setDefaultFailureUrl(failureUrl);
