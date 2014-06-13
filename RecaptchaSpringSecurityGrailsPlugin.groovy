@@ -1,13 +1,13 @@
 import org.codehaus.groovy.grails.plugins.recaptchaspringsecurity.AuthenticationFailureListener
 import org.codehaus.groovy.grails.plugins.recaptchaspringsecurity.AuthenticationSuccessListener
 import org.codehaus.groovy.grails.plugins.recaptchaspringsecurity.CaptchaCaptureFilter
-import org.codehaus.groovy.grails.plugins.springsecurity.SecurityFilterPosition
-import org.codehaus.groovy.grails.plugins.springsecurity.SpringSecurityUtils
+import grails.plugin.springsecurity.SecurityFilterPosition
+import grails.plugin.springsecurity.SpringSecurityUtils
 
 class RecaptchaSpringSecurityGrailsPlugin {
 
-    def version = "0.1"
-    def grailsVersion = "1.3.7 > *"
+    def version = "0.2"
+    def grailsVersion = "2.3.2 > *"
     def pluginExcludes = ["grails-app/conf/RecaptchaConfig.groovy"]
     def loadAfter = ['springSecurityCore']
 

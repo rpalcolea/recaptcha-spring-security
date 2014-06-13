@@ -17,11 +17,11 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        build ':release:2.2.0', ':rest-client-builder:1.0.3', {
-            export = false
-        }
+        build ':release:2.2.1', ':rest-client-builder:1.0.3', {
+          export = false
+       }
 
-        compile ":recaptcha:0.5.3"
-        compile ":spring-security-core:1.2.7.3"
+        compile ":recaptcha:0.6.9"
+        compile ":spring-security-core:2.0-RC3"
     }
 }
