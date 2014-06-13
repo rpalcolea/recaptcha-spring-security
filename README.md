@@ -8,9 +8,9 @@ based in: [Brute Force Defender](https://github.com/grygoriy/bruteforcedefender)
 Requirements
 ========================
 
-1. Grails 1.3.7+
-2. [Spring Security Core Plugin](http://grails.org/plugin/spring-security-core) (1.2.7.3+)
-3. [ReCaptcha Plugin](http://grails.org/plugin/recaptcha) (0.5.3+)
+1. Grails 2.3.2+
+2. [Spring Security Core Plugin](http://grails.org/plugin/spring-security-core) (2.0-RC3+)
+3. [ReCaptcha Plugin](http://grails.org/plugin/recaptcha) (0.6.9+)
 
 Installation
 ========================
